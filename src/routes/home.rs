@@ -1,25 +1,17 @@
 use yew::prelude::*;
 
-pub struct Home {
-    link: ComponentLink<Self>,
-    value: i64,
-}
+pub struct Home {}
 
-pub enum Msg {
-    AddOne,
-}
+pub enum Msg {}
 
 impl Component for Home {
     type Message = Msg;
     type Properties = ();
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link, value: 0 }
+    fn create(_: Self::Properties, _: ComponentLink<Self>) -> Self {
+        Self {}
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        match msg {
-            Msg::AddOne => self.value += 1,
-        }
+    fn update(&mut self, _: Self::Message) -> ShouldRender {
         true
     }
 
@@ -33,8 +25,7 @@ impl Component for Home {
     fn view(&self) -> Html {
         html! {
             <>
-                <button onclick=self.link.callback(|_| Msg::AddOne)>{ "Increment" }</button>
-                <p>{ self.value }</p>
+                <img src="https://patrickjusic.com/img/hello.jpg" alt="hello" style="max-width: 100%; border-radius: 8px;" />
             </>
         }
     }

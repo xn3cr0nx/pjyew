@@ -1,6 +1,5 @@
 use yew::{html, Component, ComponentLink, Html, ShouldRender};
-// use crate::routes::{AppRoutes, Home, Profile};
-use crate::routes::{AppRoutes, Home};
+use crate::routes::{AppRoutes, Home, Test};
 use yew_router::switch::Permissive;
 use yew_router::{route::Route, router::Router as YewRouter};
 
@@ -28,6 +27,7 @@ impl Component for Router {
                 render=YewRouter::render(|switch: AppRoutes| {
                     match switch {
                         AppRoutes::Home => html!{<Home />},
+                        AppRoutes::Test => html!{<Test />},
                         // AppRoutes::Profile => html!{<Profile />},
                         AppRoutes::NotFound(Permissive(None)) => html!{"Page not found"},
                         // AppRoutes::NotFound(Permissive(None)) => {
