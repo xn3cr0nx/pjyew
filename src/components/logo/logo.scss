@@ -1,0 +1,37 @@
+& {
+  text-decoration: none;
+}
+
+& > div > .logo__mark,
+& > div > .logo__text {
+  color: #e8e6e3;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.54;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, Roboto, Segoe UI,
+    Helvetica, Arial, sans-serif;
+  font-feature-settings: liga, tnum, case, calt, zero, ss01, locl;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+& > div > .logo__cursor {
+  background-color: #00ff00;
+  color: transparent;
+  animation: cursor 1s infinite;
+  border-radius: 2px;
+  display: inline-block;
+  height: 1rem;
+  margin-left: 5px;
+  width: 2px;
+}
