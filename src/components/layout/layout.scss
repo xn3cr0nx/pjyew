@@ -1,0 +1,16 @@
+& {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #292a2d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 50%;
+  height: 100vh;
+  align-self: center;
+  margin: 2rem 0;
+}
