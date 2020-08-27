@@ -616,7 +616,9 @@ name = "pjyew"
 version = "0.1.0"
 dependencies = [
  "css-in-rust",
+ "log",
  "wasm-bindgen",
+ "wasm-logger",
  "web_logger",
  "yew",
  "yew-octicons",
@@ -1084,6 +1086,17 @@ name = "wasm-bindgen-shared"
 version = "0.2.65"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b6c0220ded549d63860c78c38f3bcc558d1ca3f4efa74942c536ddbbb55e87"
+
+[[package]]
+name = "wasm-logger"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "074649a66bb306c8f2068c9016395fa65d8e08d2affcbf95acf3c24c3ab19718"
+dependencies = [
+ "log",
+ "wasm-bindgen",
+ "web-sys",
+]
 
 [[package]]
 name = "web-sys"

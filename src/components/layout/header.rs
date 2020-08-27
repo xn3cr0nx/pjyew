@@ -1,6 +1,8 @@
 use css_in_rust::Style;
 use yew::{html, Classes, Component, ComponentLink, Html, Properties, ShouldRender};
 use crate::components::logo::Logo;
+use yew_router::components::RouterAnchor;
+use crate::routes::{AppRoutes};
 
 pub struct Header {
     props: Props,
@@ -38,10 +40,26 @@ impl Component for Header {
     }
 
     fn view(&self) -> Html {
+        type Anchor = RouterAnchor<AppRoutes>;
+        
         html! {
            <navbar class=Classes::from(self.props.class.clone()).extend(self.style.clone())>
                 <div>
-                    <Logo />
+                    <Anchor route=AppRoutes::Home classes="link">
+                        <Logo />
+                    </Anchor>
+
+                    <div class="row">
+                        <Anchor route=AppRoutes::About classes="link">
+                            <ul>{"About"}</ul>
+                        </Anchor>
+                        <Anchor route=AppRoutes::Blog classes="link">
+                            <ul>{"Blog"}</ul>
+                        </Anchor>
+                        <Anchor route=AppRoutes::Portfolio classes="link">
+                            <ul>{"Portfolio"}</ul>
+                        </Anchor>
+                    </div>
                 </div>
             </navbar>
         }

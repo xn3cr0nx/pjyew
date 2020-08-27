@@ -3,6 +3,8 @@ use css_in_rust::Style;
 use yew::{html, Classes, Component, ComponentLink, Html, Properties, ShouldRender};
 use yew_octicons::Icon;
 use yew_octicons::IconKind;
+use yew_router::components::RouterAnchor;
+use crate::routes::{AppRoutes};
 
 /// Footer e.g. for displaying copyright notice and version info.
 pub struct Footer {
@@ -54,11 +56,14 @@ impl Component for Footer {
 
     fn view(&self) -> Html {
         let repo: &str = "https://github.com/xn3cr0nx/pjyew";
+        type Anchor = RouterAnchor<AppRoutes>;
 
         html! {
             <footer class=Classes::from(self.props.class.clone()).extend(self.style.clone())>
                 <div>
-                    <Logo />
+                    <Anchor route=AppRoutes::Home classes="link">
+                        <Logo />
+                    </Anchor>
                     <div class="row">
                         <p>{"Powered By Yew"}</p>
                         <a href=repo.clone() target="_blank" rel="noopener noreferrer" class="repo">
